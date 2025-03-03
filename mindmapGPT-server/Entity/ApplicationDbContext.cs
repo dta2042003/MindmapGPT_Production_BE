@@ -10,9 +10,10 @@ namespace mindmapGPT_server.Entity
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<UserEntity>()
-            //    .HasIndex(u => u.Email)
-            //    .IsUnique();
+            // Đảm bảo Email là duy nhất (nếu cần)
+            modelBuilder.Entity<UserEntity>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
         }
     }
 }
